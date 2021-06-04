@@ -1,0 +1,11 @@
+package vn.nntt.api.web;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController(value = "songAPIOfWeb" )
+public class SongAPI {
+	/*
+	 * @GetMapping("/api/song") public SongDTO getSong(@RequestBody SongDTO songDTO)
+	 * { return songDTO; }
+	 */
+}

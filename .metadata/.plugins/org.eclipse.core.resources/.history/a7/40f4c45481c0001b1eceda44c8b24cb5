@@ -1,0 +1,13 @@
+package vn.nntt.model;
+
+public class ArtistModel extends AbstractModel<ArtistModel> {
+	
+	private String codecs;
+	private String tencs;
+	private String linkavatar;
+	private String ngaysinh;
+	private String quequan;
+
+	
+	
+}

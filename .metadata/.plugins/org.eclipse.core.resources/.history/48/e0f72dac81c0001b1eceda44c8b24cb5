@@ -1,0 +1,7 @@
+package vn.nntt.model;
+
+public class GenreModel extends AbstractModel<GenreModel> {
+
+	private String codetl;
+	private String tentl;
+}

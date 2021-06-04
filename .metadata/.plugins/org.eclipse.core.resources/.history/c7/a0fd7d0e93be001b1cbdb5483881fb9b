@@ -1,0 +1,33 @@
+package vn.nntt.dao.impl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import vn.nntt.dao.ISongDAO;
+import vn.nntt.mapper.SongMapper;
+import vn.nntt.model.SongModel;
+
+@Repository
+public class SongDAO extends AbstractDAO<SongModel> implements ISongDAO {
+	
+	@Override
+	public List<SongModel> findAll() {
+		StringBuilder sql = new StringBuilder("SELECT * FROM baihat");
+		return query(sql.toString(), new SongMapper());
+	}
+	
+	
+	/*
+	 * @Override public SongModel findOne(String TenBH) { String sql =
+	 * "SELECT * FROM baihat WHERE tenbh = ?"; List<SongModel> song = query(sql, new
+	 * SongMapper(), TenBH); return song.isEmpty() ? null : song.get(0); }
+	 */
+	
+	@Override
+	public List<SongModel> findAllSongPerGenre() {
+		String sql = "SELECT * FROM baihat WHERE bh.codetl = tl.codetl and tl.codetl = ?";
+		return query(sql, new SongMapper());
+	}
+	 
+}

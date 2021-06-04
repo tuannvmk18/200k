@@ -1,0 +1,5 @@
+package vn.nntt.service.impl;
+
+public class ArtistService {
+
+}

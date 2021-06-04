@@ -1,0 +1,14 @@
+package vn.nntt.model;
+
+public class SongModel extends AbstractModel<SongModel> {
+	
+	private String mabh;	
+	private String tenBH;
+	private String codeCS;
+	private String codeTL;
+	private String linkBH;
+	private String linkAnh;
+	private String thoiLuong;
+	
+	
+}

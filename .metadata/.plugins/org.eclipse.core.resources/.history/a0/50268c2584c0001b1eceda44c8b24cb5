@@ -1,0 +1,9 @@
+package vn.nntt.service;
+
+import java.util.List;
+
+import vn.nntt.model.SongModel;
+
+public interface IArtistService {
+	List<ArtistModel> findAll();
+}

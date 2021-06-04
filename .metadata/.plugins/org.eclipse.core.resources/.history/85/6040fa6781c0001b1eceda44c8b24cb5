@@ -1,0 +1,24 @@
+package vn.nntt.mapper;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import vn.nntt.model.ArtistModel;
+
+public class ArtistMapper implements RowMapper<ArtistModel> {
+
+	@Override
+	public ArtistModel mapRow(ResultSet resultSet) {
+		try {
+			ArtistModel artists = new ArtistModel();
+			artists.setCodeCS(resultSet.getString("codeCS"));
+			artists.setTenCS(resultSet.getString("tenCS"));
+			artists.setLinkAvatar(resultSet.getString("linkAvatar"));		
+			artists.setNgaySinh(resultSet.getString("ngaySinh"));
+			artists.setQueQuan(resultSet.getString("queQuan"));
+			return artists;
+		} catch (SQLException e) {
+			return null;
+		}	
+	}
+}

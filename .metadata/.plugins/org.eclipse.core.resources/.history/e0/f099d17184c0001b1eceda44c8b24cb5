@@ -1,0 +1,5 @@
+package vn.nntt.controller.admin;
+
+public class ArtistController {
+
+}

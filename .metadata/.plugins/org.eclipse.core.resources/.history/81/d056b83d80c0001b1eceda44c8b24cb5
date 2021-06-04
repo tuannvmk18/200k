@@ -1,0 +1,5 @@
+package vn.nntt.dto;
+
+public class ArtistDTO {
+
+}

@@ -1,0 +1,26 @@
+1620222042753	Delete element
+1620222161141	Move 'home.jsp' to 'web'
+1620222181134	Copy file
+1620224729986	Rename package 'vn.nntt.controller'
+1620224816330	Copy compilation unit
+1620303329903	Rename resource 'home.jsp'
+1620397149366	Rename resource 'adhome.jsp'
+1620440971893	Delete elements
+1620443090600	Copy compilation unit
+1620455998575	Rename type 'NewDAO'
+1620456018026	Rename type 'INewDAO'
+1620456108947	Rename type 'NewMapper'
+1620456188431	Rename type 'NewModel'
+1620456279009	Rename type 'NewService'
+1620456299442	Rename type 'INewService'
+1620465865691	Rename compilation unit 'CategoryModel.java'
+1620465893668	Rename type 'CategoryMapper'
+1620465965149	Rename type 'CategoryDAO'
+1620466051047	Rename type 'GenreDAO'
+1620466069074	Rename type 'xzcDAO'
+1620466247390	Rename type 'ICategoryDAO'
+1620482090964	Copy compilation unit
+1620482125481	Copy compilation unit
+1620482145299	Copy compilation unit
+1620482163260	Copy compilation unit
+1620484582238	Rename resource 'Artist.jsp'

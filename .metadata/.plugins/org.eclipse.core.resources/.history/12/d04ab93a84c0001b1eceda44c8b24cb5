@@ -1,0 +1,7 @@
+package vn.nntt.service.impl;
+
+import vn.nntt.service.ISongService;
+
+public class ArtistService implements IArtistService{
+
+}

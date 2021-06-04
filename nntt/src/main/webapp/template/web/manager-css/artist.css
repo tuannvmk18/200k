@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin          : 0;
+    font-size       : 16px;
+    font-family     : Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(95, 158, 160);
+}
+
+.grid-container-for-artist {
+    justify-content      : center;
+    display              : grid;
+    grid-column-gap      : 10px;
+    grid-template-columns: 24% 49% 24%;
+}
+
+.artist-content {
+    display: block;
+}
+
+.artist-avt{
+    margin       : auto;
+    width        : 250px;
+    height       : 250px;
+    border-radius: 5px;
+    object-fit   : cover;
+    flex-shrink  : 0;
+    margin-bottom: 10px;
+    box-shadow      : rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+}
+
+.artist-nickname {
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 20px;
+
+}
+
+.artist-info{
+    display: block;
+}
+
+.artist-name, .artist-dob, .artist-contry{
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+div {
+    display: block;
+}

@@ -1,0 +1,19 @@
+
+package vn.nntt.api.web;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import vn.nntt.dto.SongDTO;
+
+@RestController(value = "songAPIOfWeb")
+
+public class SongAPI {
+
+	@GetMapping(value = "/SongModels" , produces="application/json")
+	public SongDTO getSong(@RequestBody SongDTO songDTO) {
+		SongDTO s = new SongDTO();
+		return s;
+	}
+}

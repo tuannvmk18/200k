@@ -1,0 +1,32 @@
+package vn.nntt.api.web;
+
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import vn.nntt.dto.SongDTO;
+import vn.nntt.model.SongModel;
+import vn.nntt.service.impl.SongService;
+
+@RestController(value = "songAPIOfWeb" )
+public class SongAPI {
+	
+	/*
+	 * @GetMapping("/api/song") public SongDTO getSong(@RequestBody SongDTO
+	 * songDTO){ return songDTO; }
+	 */ 
+	
+	@RequestMapping(value = "/api/song", method = RequestMethod.GET)
+    public ResponseEntity<List<SongModel>> findAll() {
+        List<SongModel> sm = SongService.findAll();
+        if(sm.isEmpty()){
+            return new ResponseEntity<List<SongModel>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
+        }
+        return new ResponseEntity<List<SongModel>>(sm, HttpStatus.OK);
+    }
+}

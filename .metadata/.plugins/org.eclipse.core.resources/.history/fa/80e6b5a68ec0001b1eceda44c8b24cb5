@@ -1,0 +1,19 @@
+package vn.nntt.dao.impl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import vn.nntt.dao.IArtistDAO;
+import vn.nntt.mapper.ArtistMapper;
+import vn.nntt.model.ArtistModel;
+
+@Repository
+public class ArtistDAO extends AbstractDAO<ArtistModel> implements IArtistDAO {
+	
+	@Override
+	public List<ArtistModel> findAll() {
+		String sql = ("SELECT * FROM casy");
+		return query(sql.toString(), new ArtistMapper());
+	}
+}

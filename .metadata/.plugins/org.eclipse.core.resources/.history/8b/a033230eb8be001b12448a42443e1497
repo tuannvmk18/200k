@@ -1,0 +1,114 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/common/taglib.jsp" %>
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Trang Chu</title>
+
+</head>
+
+<body>
+
+	<!-- Slideshow -->
+	<div class="slideshow-container">
+
+		<!-- Full-width images-->
+		<div class="mySlides fade">
+			<img src="https://i.ibb.co/3dCxQ2x/chanai.jpg" style="width: 100%">
+		</div>
+
+		<div class="mySlides fade">
+			<img src="https://i.ibb.co/4mJWq5X/duyenminhlo.jpg" style="width: 100%">
+		</div>
+
+		<div class="mySlides fade">
+			<img src="https://i.ibb.co/c1PHgnd/thangtulaloinoidoicuaem.jpg" style="width: 100%">
+		</div>
+
+		<div class="mySlides fade">
+			<img src="https://i.ibb.co/8BcmmsM/tuchoinhenhangthoi.jpg" style="width: 100%">
+		</div>
+
+		<div class="mySlides fade">
+			<img src="https://i.ibb.co/2MKkbYr/mascara.jpg" style="width: 100%">
+		</div>
+
+		<div class="mySlides fade">
+			<img src="https://i.ibb.co/bzPzf9L/chuyenrang.jpg" style="width: 100%">
+		</div>
+
+		<div class="mySlides fade">
+			<img src="https://i.ibb.co/93ZvW2y/nuocmatemlaubangtinhyeumoi.jpg" style="width: 100%">
+		</div>
+
+		<div class="mySlides fade">
+			<img src="https://i.ibb.co/k5MK0Mp/cuocsongemonkhong.jpg" style="width: 100%">
+		</div>
+	</div>
+
+	<hr>
+
+	<div class="grid-container-for-home">
+		<div class="grid-item">
+			<div class="block-content">
+				<div class="block-heading">
+					<div class="heading">All Songs</div>
+					<div class="count-song"></div>
+				</div>
+				<div class="song-list">
+					
+					<%@ include file="/common/web/list-song.jsp" %>
+					
+				</div>
+			</div>
+		</div>
+
+		<%@ include file="/common/web/playing-music.jsp" %>
+		
+	</div>
+	
+	<script type="text/javascript">
+	function searchBaiHat() {
+
+		var tenbh = $("#query").val();
+
+		$.ajax({
+			type : "GET",
+			contentType : "application/json",
+			url : "/trang-chu",
+			data : {
+				tenbh : tenbh
+			},
+			dataType : 'json',
+			timeout : 100000,
+			success : function(data) {
+				console.log("SUCCESS: ", data);
+				if (data != null) {
+					var result = 
+						<div class="song">
+						<img src="${item.linkAnh}" alt="" class="song-image" />
+						<h4 class="song-title">${item.tenBH}</h4>
+						<h5 class="song-author">${item.codeCS}</h5>
+						<time class="song-time">${item.thoiLuong}</time>
+					</div>;
+					$("#ajax-response").html(result);
+				} else {
+					var result = alert("opp!");
+					$("#ajax-response").html(result);
+				}
+			},
+			error : function(e) {
+				console.log("ERROR: ", e);
+			}
+		});
+	}
+	</script>
+	
+</body>
+
+</html>

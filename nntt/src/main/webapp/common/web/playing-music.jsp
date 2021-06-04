@@ -8,15 +8,15 @@
 				<div class="player">
 					<div class="player-box">
 						<div class="player-media">
-							<img src="https://i.ibb.co/GF1qLWJ/24h.jpg" alt="" class="player-image" />
+							<img  alt="" class="player-image" />
 						</div>
-						<h3 class="player-title title">24h</h3>
-						<a href="/nntt/nghe-sy" class="player-author author"
-							style="text-decoration: none;">LyLY</a>
+						<h3 class="player-title title">Unknown</h3>
+						<a href="/spring-mvc/nghe-sy" class="player-author author"
+							style="text-decoration: none;">Unknown</a>
 						<div class="progress">
 							<input type="range" id="progress-bar" min="0" max="" value="0"
 								class="bar" />
-							<audio src="<c:url value='/template/web/music/24h-LyLy-pop.mp3'/>" id="song"></audio>
+							<audio id="song"></audio>
 						</div>
 						<div class="player-number">
 							<span class="player-duration">0:00</span> 

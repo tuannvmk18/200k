@@ -23,8 +23,11 @@ let timer;
 let prefix = '';
 
 if (window.location.href != "http://localhost:8080/spring-mvc/the-loai") {
-	prefix = '/' + window.location.href.split('/')[5];
-	console.log(prefix);
+	if(window.location.href.includes('nghe-sy')) {
+		prefix = "?nghesi=" + window.location.href.split('/')[5];
+	}else {
+		prefix = window.location.href.split('/')[5] != undefined? '/' + window.location.href.split('/')[5] : '';
+	}
 }
 let url = './SongModel' + prefix;
 
@@ -87,6 +90,7 @@ function nextSong(index = -1) {
 	song.src = songs[songIndex];
 	thumbnail.src = thumbnails[songIndex];
 	songArtist.innerHTML = songArtists[songIndex];
+	songArtist.href = 'http://localhost:8080/spring-mvc/nghe-sy/' + songArtists[songIndex];
 	songTitle.innerHTML = songTitles[songIndex];
 	playing = true;
 	playPause();

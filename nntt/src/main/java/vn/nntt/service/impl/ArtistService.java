@@ -19,4 +19,12 @@ public class ArtistService implements IArtistService{
 	public List<ArtistModel> findAllArtist() {
 		return artistDao.findAllArtist();
 	}
+
+	@Override
+	public List<ArtistModel> findByName(String name) {
+		// TODO Auto-generated method stub
+		return  artistDao.findByName(name);
+	}
+	
+	
 }

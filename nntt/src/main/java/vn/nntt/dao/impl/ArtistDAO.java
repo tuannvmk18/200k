@@ -16,4 +16,10 @@ public class ArtistDAO extends AbstractDAO<ArtistModel> implements IArtistDAO {
 		StringBuilder sql = new StringBuilder("SELECT * FROM casy");
 		return query(sql.toString(), new ArtistMapper());
 	}
+
+	@Override
+	public List<ArtistModel> findByName(String name) {
+		StringBuilder sql = new StringBuilder(String.format("SELECT * FROM casy WHERE codecs = '%s'", name));
+		return query(sql.toString(), new ArtistMapper());
+	}
 }

@@ -12,4 +12,5 @@ public interface ISongService {
 	List<SongModel> findAllSongPerSinger();
 	
 	List<SongModel> findByCategory(String theloai);
+	List<SongModel> findBySinger(String name);
 }

@@ -20,7 +20,6 @@
 				</div>
 			</div>
 		</div>
-		
 		<div class="grid-item">
 			<div class="block-content">
 				<div class="block-heading">

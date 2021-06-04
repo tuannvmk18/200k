@@ -32,7 +32,13 @@ public class SongDAO extends AbstractDAO<SongModel> implements ISongDAO {
 	@Override
 	public List<SongModel> findByCategory(String theloai) {
 		StringBuilder sql = new StringBuilder(String.format("SELECT * FROM baihat WHERE codetl = '%s'", theloai));
-		System.out.print(sql.toString());
+		return query(sql.toString(), new SongMapper());
+	}
+
+	@Override
+	public List<SongModel> findBySinger(String name) {
+		StringBuilder sql = new StringBuilder(String.format("SELECT * From casy,baihat WHERE baihat.codecs = casy.codecs and baihat.codecs = '%s'", name));
+		System.out.println(sql);
 		return query(sql.toString(), new SongMapper());
 	}
 }

@@ -34,4 +34,9 @@ public class SongService implements ISongService {
 	public List<SongModel> findByCategory(String theloai) {
 		return songDao.findByCategory(theloai);
 	}
+
+	@Override
+	public List<SongModel> findBySinger(String name) {
+		return songDao.findBySinger(name);
+	}
 }

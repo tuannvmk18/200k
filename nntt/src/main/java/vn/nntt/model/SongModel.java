@@ -1,5 +1,7 @@
 package vn.nntt.model;
 
+import java.util.List;
+
 public class SongModel extends AbstractModel<SongModel> {
 	
 	private String mabh;	
@@ -8,6 +10,12 @@ public class SongModel extends AbstractModel<SongModel> {
 	private String codetl;
 	private String linkbh;
 	private String linkanh;
+	public ArtistModel artistModel;
+	
+	public void setArtistModel(List<ArtistModel> artistModel) {
+		this.artistModel = artistModel.get(0);
+	}
+	
 	public String getMabh() {
 		return mabh;
 	}
@@ -51,4 +59,8 @@ public class SongModel extends AbstractModel<SongModel> {
 		this.thoiluong = thoiluong;
 	}
 	private String thoiluong;
+	
+	public ArtistModel getArtistModel() {
+		return this.artistModel;
+	}
 }

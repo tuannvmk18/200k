@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import vn.nntt.model.ArtistModel;
 import vn.nntt.model.SongModel;
+import vn.nntt.service.IArtistService;
 import vn.nntt.service.ISongService;
 
 @Controller(value = "homeControllerOfWeb")
@@ -17,6 +19,9 @@ public class HomeController {
 
 	@Autowired
 	private ISongService SongService;
+	
+	@Autowired
+	private IArtistService ArtistService;
 
 	@RequestMapping(value = "/trang-chu", method = RequestMethod.GET, produces = "application/json")
 	public ModelAndView homePage(@ModelAttribute("model") SongModel model) {
@@ -31,6 +36,15 @@ public class HomeController {
 		ModelAndView mav = new ModelAndView("web/artist");
 		model.setListResult(SongService.findAll());
 		/* model.setListResult(SongService.findAllSongPerSinger()); */
+		mav.addObject("model", model);
+		return mav;
+	}
+	
+	@RequestMapping(value = "/nghe-sy/{nghesy}", method = RequestMethod.GET, produces = "application/json")
+	public ModelAndView artistPageD(@PathVariable("nghesy") String nghesy,@ModelAttribute("model") SongModel model) {
+		ModelAndView mav = new ModelAndView("web/artistD");
+		model.setListResult(SongService.findBySinger(nghesy));
+		model.setArtistModel(ArtistService.findByName(nghesy));
 		mav.addObject("model", model);
 		return mav;
 	}
@@ -53,3 +67,4 @@ public class HomeController {
 	}
 	
 }
+

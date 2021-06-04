@@ -6,4 +6,5 @@ import vn.nntt.model.ArtistModel;
 
 public interface IArtistService {
 	List<ArtistModel> findAllArtist();
+	List<ArtistModel> findByName(String name);
 }
